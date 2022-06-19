@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: GPL-2.0
 /* Copyright (c) 2019 Facebook */
 
-#include <linux/bpf.h>
-#include <netinet/in.h>
-#include <stdbool.h>
+#define BPF_NO_PRESERVE_ACCESS_INDEX
+#include "vmlinux.h"
 
 #include <bpf/bpf_helpers.h>
 #include <bpf/bpf_endian.h>
-#include "bpf_tcp_helpers.h"
+#include "bpf_tracing_net.h"
 
 enum bpf_linum_array_idx {
 	EGRESS_LINUM_IDX,
